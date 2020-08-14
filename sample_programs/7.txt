@@ -1,0 +1,88 @@
+int buckets[11][100005]
+int bucket_size[11]
+char inp[100005][7]
+int seq[100005]
+int size[100005]
+
+func int max(int a, int b)
+begin
+	if a>b then
+	begin
+		return a
+	end
+	return b
+end
+
+func int calc_len(char str[])
+begin
+	int n 
+	n = 0
+	while(str[n]!=0)
+	begin
+		n=n+1
+	end
+	return n
+end
+
+func int main()
+begin
+	scan(n)
+	int max_size
+	max_size = 0
+	int i
+	for i=0,i<n,i=i+1
+	begin
+		scan(inp[i])
+		size[i] = calc_len(inp[i])
+		max_size = max(max_size,size[i])
+		seq[i] = i
+	end
+
+	print(max_size)
+
+	int i
+	for i=1, i<=max_size, i=i+1
+	begin
+		print("Currently on ",i," digit")
+		int j
+		for j=0, j<11, j=j+1
+		begin
+			bucket_size[j]=0
+		end
+		for j=0, j<n, j=j+1
+		begin
+			int digit
+			digit = 0 
+			int n_size
+			n_size = size[seq[j]]
+			if n_size>=i then
+			begin
+				digit = inp[seq[j]][n_size - i] - '0'
+			end
+			int temp
+			temp = bucket_size[digit]
+			buckets[digit][temp] = seq[j]
+			bucket_size[digit] = temp + 1
+		end
+		int cnt
+		cnt = 0
+		int j
+		for j=0, j<11, j=j+1
+		begin
+			int temp
+			temp = bucket_size[j]
+			int k
+			for k=0, k<temp, k=k+1
+			begin
+				seq[cnt] = buckets[j][k]
+				cnt = cnt + 1
+			end
+		end
+	end
+	int i
+	for i=0, i<n, i=i+1
+	begin
+		print(inp[seq[i]])
+	end
+	return 0
+end

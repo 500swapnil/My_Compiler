@@ -1,0 +1,70 @@
+func int main()
+begin
+	int m 
+	scan("Enter number of rows of first matrix",m)
+	scan("Enter number of columns of first matrix",n)
+	int c
+	int d
+	int k
+	int sum
+	sum = 0
+	int first[10][10]
+	int second[10][10]
+	int multiply[10][10]
+ 
+	print("Enter elements of first matrix")
+ 
+	for c = 0,c < m, c=c+1
+	begin
+		for d = 0,d < n, d=d+1
+		begin
+			scan(first[c][d])
+		end
+	end
+ 
+	int m 
+	scan("Enter number of rows of second matrix",m)
+	int n
+	scan("Enter number of columns of second matrix",n)
+ 
+	if n != p then
+	begin
+		print("The matrices cant be multiplied with each other.")
+	end
+	else
+	begin
+		print("Enter elements of second matrix")
+ 
+		for c = 0, c < p, c=c+1
+		begin
+			for d = 0, d < q, d=d+1
+			begin
+				scan(second[c][d])
+			end
+		end
+ 
+		for c = 0, c < m, c=c+1
+		begin
+			for d = 0, d < q, d=d+1
+			begin
+				for k = 0, k < p, k=k+1
+				begin
+					sum = sum + first[c][k]*second[k][d]
+				end
+ 
+				multiply[c][d] = sum
+				sum = 0
+			end
+		end
+ 
+		for c = 0, c < m, c=c+1
+		begin
+			for d = 0, d < q, d=d+1
+			begin
+				print(multiply[c][d])
+			end
+			print("")
+		end
+	end
+	return 0
+end

@@ -1,0 +1,23 @@
+int ret,b
+func int fact(int a)
+begin
+	if a == 1 then
+	begin
+		return 1 
+	end
+	return a * fact(a - 1)
+end
+
+func void main()
+begin
+	int n,k,i
+	n = 3
+	k = 6
+	i = fact(n+1)
+	while n <= k
+	begin
+		n = n+1
+	end
+	print("%d",n)
+	return
+end

@@ -1,0 +1,39 @@
+func int main()
+begin
+	int array[10]
+	int c,n
+	int d
+	int t
+	n = 3
+	array[0] = 3
+	array[1] = 2
+	array[2] = 1
+	c = 1
+	d = 1
+ 
+	for c = 1,c < n, 1
+	begin
+		d = c
+		while (d > 0)
+		begin
+			if  (array[d - 2] <= array[d]) then
+			begin
+				break
+			end
+			t = array[d]
+			array[d]   = array[d - 1]
+			array[d - 1] = t
+			d = d - 1
+		end
+
+	end
+ 
+	print("Sorted list in ascending order:   ")
+ 
+	for c = 0, c < n ,  1
+	begin
+		print("%d, ",array[c])
+	end
+ 
+	return 0
+end

@@ -1,0 +1,31 @@
+func int main()
+begin
+	int n
+	int i
+	n = 10
+	int arr[1005] 
+
+	for i=0,i<1005,1
+	begin
+		arr[i] = 0
+	end
+	int ans
+	ans = 0
+
+	for i=2, i<n, 1
+	begin
+		if arr[i] == 0 then
+		begin
+			ans = ans + i  
+			int mult
+			mult = 2  
+			while i*mult < n
+			begin
+				arr[i*mult] = -1  
+				mult = mult + 1 
+			end
+		end
+	end
+	print("%d",ans)
+	return 0 
+end

@@ -1,0 +1,39 @@
+func int mod( int a, int b)
+begin
+	while a>=b
+	begin
+		a = a - b
+	end
+	return a
+end
+
+func int pow(int x, int n)
+begin
+	if n==0 then
+	begin
+		return 1
+	end
+	int temp 
+	temp = pow(x,n/2)
+
+	if mod(n,2) == 0 then
+	begin
+		return temp * temp
+	end
+	return x*temp*temp
+end
+
+
+func int main()
+begin
+	int num,k,ans,i
+	num = 5
+	k = 2
+	ans = 0
+	for i=1, i<num, 1
+	begin
+		ans = ans + pow(i,k)
+	end
+	print("%d",ans)
+	return 0
+end

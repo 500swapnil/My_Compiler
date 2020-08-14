@@ -1,0 +1,38 @@
+func void pythagoreanTriplets(int limit) 
+begin 
+    int a,b,c,m,n
+    a = 0
+    b = 0
+    c = 0 
+    m = 2 
+    n = 1
+    while c < limit
+    begin 
+
+        for n = 1, n < m, 1
+        begin 
+  
+            a = m * m - n * n 
+            b = 2 * m * n 
+            c = m * m + n * n 
+  
+            if c > limit then
+            begin
+                break
+            end
+  
+            print("        %d  %d  %d        ",a, b, c) 
+        end
+        m=m+1
+    end
+    return
+end
+  
+
+func int main() 
+begin 
+    int limited 
+    limited = 20 
+    pythagoreanTriplets(limited) 
+    return 0 
+end

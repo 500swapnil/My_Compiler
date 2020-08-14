@@ -1,0 +1,59 @@
+func int main()
+begin
+	int na 
+	scan(na)
+	int ma 
+	scan(ma)
+	int nb 
+	scan(nb)
+	int mb 
+	scan(mb)
+
+	int a[1005][1005]
+	int b[1005][1005]
+
+	int i
+	for i=0, i<na,i=i+1
+	begin
+		int j
+		for j=0, j<ma, j=j+1
+		begin
+			scan(a[i][j])
+		end
+	end
+
+	int i
+	for i=0, i<nb, i=i+1
+	begin
+		int j
+		for j=0, j<mb, j=j+1
+		begin
+			scan(b[i][j])
+		end
+	end
+
+	if na != nb then
+	begin
+		print("Dimension mismatch")
+		return 0
+	end
+	if ma != mb then
+	begin
+		print("Dimension mismatch")
+		return 0
+	end
+	
+	int i
+	for i=0, i<na, i=i+1
+	begin
+		int j
+		for j=0, j<ma, j=j+1
+		begin
+			print(a[i][j]+b[i][j])
+		end
+	end
+	return 0
+end
+
+
+
