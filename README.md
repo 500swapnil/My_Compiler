@@ -1,5 +1,5 @@
-# Compiler for Kauta
-This repo contains a compiler for Kauta, a programming language created for the coursework of Compilers, Monsoon, 2019 under Prof. Suresh Purini at IIIT Hyderabad.
+# Compiler for Kauta (CPy)
+This repo contains a compiler for Kauta(CPy), an object oriented programming language similar to C++ and Python, created for the coursework of Compilers, Monsoon, 2019 under Prof. Suresh Purini at IIIT Hyderabad.
 
 ## Language Design
 The details about the language design can be found in `Language-Design.pdf`.
